@@ -112,6 +112,7 @@ countdownForm[1].value = "";
 timeElements.forEach(timeElement => timeElement.textContent = "0");
 countdownTitle = "";
 countdownDate = "";
+localStorage.removeItem('countdown')
 return false;
 }
 

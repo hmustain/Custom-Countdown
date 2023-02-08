@@ -109,7 +109,7 @@ button:hover {
     filter: brightness(125%);
 }
 
-button:active{
+button:active {
     transform: scale(0.95);
 }
 
@@ -125,7 +125,7 @@ li {
     text-transform: uppercase;
 }
 
-  
+
 
 li span {
     display: block;
@@ -146,28 +146,33 @@ li span {
     0% {
         color: rgb(233, 13, 13);
     }
+
     25% {
         color: rgb(233, 211, 13);
     }
+
     50% {
         color: rgb(64, 233, 13);
         transform: scale(1.5);
     }
+
     75% {
         color: rgb(0, 38, 253);
     }
+
     100% {
         color: rgb(181, 16, 231);
     }
 }
 
-  
+
 /* Media query: Large screen */
 @media screen and (min-width: 600px) {
     .form {
         width: 480px;
     }
-    .container{
+
+    .container {
         width: 500px;
         margin: 0 auto;
     }
@@ -179,78 +184,65 @@ li span {
         height: 100%;
         width: 100%;
     }
-    
+
     video {
         object-fit: cover;
         margin-top: -1px;
         height: 100%;
         width: 100%;
     }
-    
+
     .container {
-min-width: 50%;
+        min-width: 50%;
         padding: 20px;
     }
+
     .form {
         width: 100%;
     }
 }
 
 @media only screen and (max-width: 767px) {
-    li  {
-      display: inline-block;
-      text-align: center;
-      font-size: 16px;
+    li {
+        display: inline-block;
+        text-align: center;
+        font-size: 16px;
     }
 
-  li span {
+    li span {
         display: block;
         text-align: center;
         font-size: 30px;
     }
 
-.container {
-    min-height: 0%;
-    min-width: 0%;
+    .container {
+        /* min-height: 0%; */
+        min-width: 0%;
+    }
+
+    @media only screen and (max-width: 390px) {
+        li {
+            display: inline-block;
+            text-align: center;
+            font-size: 10px;
+        }
+
+        li span {
+            display: block;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .container {
+            /* min-height: 0%; */
+            min-width: 0%;
+        }
+
+        .countdown {
+            min-height: 0% !important;
+            min-width: 0%;
+        }
+
+
+    }
 }
-
-@media only screen and (max-width: 390px) {
-    li  {
-      display: inline-block;
-      text-align: center;
-      font-size: 10px;
-    }
-
-  li span {
-        display: block;
-        text-align: center;
-        font-size: 20px;
-    }
-
-.container {
-    min-height: 0%;
-    min-width: 0%;
-}
-    
-    /* li [data-unit="days"]::after {
-      content: "D";
-    }
-    
-    li [data-unit="hours"]::after {
-      content: "H";
-    }
-    
-    li [data-unit="minutes"]::after {
-      content: "M";
-    }
-    
-    li [data-unit="seconds"]::after {
-      content: "S";
-    } */
-  }
-
-  
-
-
-
-  
