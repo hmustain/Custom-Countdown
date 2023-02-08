@@ -17,6 +17,8 @@ let countdownTitle = "";
 let countdownDate = "";
 let countdownValue = Date;
 let countdownActive;
+let savedCountdown;
+
 
 // define time
 const second = 1000
@@ -76,6 +78,12 @@ clearInterval(activeCountdown);
 const countdownForm = event.target;
 countdownTitle = countdownForm[0].value;
 const selectedDate = countdownForm[1].value;
+ const savedCountdown = {
+  title: countdownTitle,
+  date: selectedDate
+}
+console.log('savedCountdown is:', savedCountdown);
+localStorage.setItem('countdown', JSON.stringify(savedCountdown))
 const [year, month, day] = selectedDate.split('-');
 countdownDate = `${month}/${day}/${year}`;
 console.log(countdownTitle, countdownDate)
@@ -94,6 +102,7 @@ startCountdown();
 function reset() {
 // Hide countdown and show inputs
 countdownEl.hidden = true
+completeEl.hidden = true
 inputContainer.hidden = false
 // stop the countdown
 clearInterval(activeCountdown)
@@ -106,8 +115,23 @@ countdownDate = "";
 return false;
 }
 
-// Event Listener
-countdownForm.addEventListener('submit', updateCountdown)
-countdownBtn.addEventListener('click', reset)
+function restorePrevCntdwn(){
+  if (localStorage.getItem('countdown')){
+    inputContainer.hidden = true
+    savedCountdown = JSON.parse(localStorage.getItem('countdown'))
+    countdownTitle = savedCountdown.title
+    selectedDate = savedCountdown.date
+    countdownValue = new Date(selectedDate).getTime()
+    startCountdown();
+  }
+}
 
+// Event Listeners
+countdownForm.addEventListener('submit', updateCountdown);
+countdownBtn.addEventListener('click', reset);
+completeBtn.addEventListener('click', reset);
+
+
+// restore prev countdown on page load
+restorePrevCntdwn();
 
