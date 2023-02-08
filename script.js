@@ -12,6 +12,12 @@ let countdownTitle = "";
 let countdownDate = "";
 let countdownValue = Date;
 
+// define time
+const second = 1000
+const minute = second * 60
+const hour = minute * 60
+const day = hour * 24
+
 
 // Set Date to Today's date
 const today = new Date().toLocaleDateString().split('T')[0];
@@ -23,6 +29,27 @@ function startCountdown() {
     const now = new Date().getTime()
     const distance = countdownValue - now
     console.log('distance :', distance);
+
+    // define time
+    const days = Math.floor( distance / day)
+    const hours = Math.floor((distance % day) / hour)
+    const minutes = Math.floor((distance % hour) / minute)
+    const seconds = Math.floor((distance % minute) / second)
+    console.log(days,'days:', hours, 'hours:', minutes, 'minutes:', seconds,'seconds:');
+
+    // Populate Countdown
+    countdownElTitle.textContent = `${countdownTitle}`
+    timeElements[0].textContent = `${days}`
+    timeElements[1].textContent = `${hours}`
+    timeElements[2].textContent = `${minutes}`
+    timeElements[3].textContent = `${seconds}`
+
+
+    // Hide Input
+    inputContainer.hidden = true
+
+    // Show Countdown
+    countdownEl.hidden = false
 }
 
 // function to take values from form input
