@@ -52,11 +52,11 @@ video {
     color: black;
     margin: 0 auto;
     padding: 25px 50px;
-    border-radius: 5px;
+    border-radius: 30px;
     z-index: 2;
     display: flex;
     justify-content: center;
-    background: rgba(255, 255, 255 0.85);
+    background: rgba(255, 255, 255, 0.4);
 }
 
 .input-container {
@@ -114,7 +114,7 @@ button:active{
 }
 
 ul {
-    margin-left: -45px;
+    /* margin-left: -45px; */
 }
 
 li {

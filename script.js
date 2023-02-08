@@ -11,6 +11,7 @@ const timeElements = document.querySelectorAll('span');
 let countdownTitle = "";
 let countdownDate = "";
 let countdownValue = Date;
+let countdownActive
 
 // define time
 const second = 1000
